@@ -70,6 +70,7 @@ INSTALLED_APPS += (
     'storages',
 )
 
+<<<<<<< HEAD
 # AWS_ACCESS_KEY_ID = env('DJANGO_AWS_ACCESS_KEY_ID')
 # AWS_SECRET_ACCESS_KEY = env('DJANGO_AWS_SECRET_ACCESS_KEY')
 # AWS_STORAGE_BUCKET_NAME = env('DJANGO_AWS_STORAGE_BUCKET_NAME')
@@ -79,14 +80,32 @@ INSTALLED_APPS += (
 
 # # AWS cache settings, don't change unless you know what you're doing:
 # AWS_EXPIRY = 60 * 60 * 24 * 7
+=======
+#AWS_ACCESS_KEY_ID = env('DJANGO_AWS_ACCESS_KEY_ID')
+#AWS_SECRET_ACCESS_KEY = env('DJANGO_AWS_SECRET_ACCESS_KEY')
+#AWS_STORAGE_BUCKET_NAME = env('DJANGO_AWS_STORAGE_BUCKET_NAME')
+#AWS_AUTO_CREATE_BUCKET = True
+#AWS_QUERYSTRING_AUTH = False
+#AWS_S3_CALLING_FORMAT = OrdinaryCallingFormat()
+
+# AWS cache settings, don't change unless you know what you're doing:
+#AWS_EXPIRY = 60 * 60 * 24 * 7
+>>>>>>> c63acdf7eb4e9fdc3ea501f96f34698419ddc2ed
 
 # TODO See: https://github.com/jschneier/django-storages/issues/47
 # Revert the following and use str after the above-mentioned bug is fixed in
 # either django-storage-redux or boto
+<<<<<<< HEAD
 # AWS_HEADERS = {
 #     'Cache-Control': six.b('max-age=%d, s-maxage=%d, must-revalidate' % (
 #         AWS_EXPIRY, AWS_EXPIRY))
 # }
+=======
+#AWS_HEADERS = {
+#    'Cache-Control': six.b('max-age=%d, s-maxage=%d, must-revalidate' % (
+#        AWS_EXPIRY, AWS_EXPIRY))
+#}
+>>>>>>> c63acdf7eb4e9fdc3ea501f96f34698419ddc2ed
 
 # URL that handles the media served from MEDIA_ROOT, used for managing
 # stored files.
@@ -132,6 +151,7 @@ DATABASES['default'] = env.db('DATABASE_URL')
 # CACHING
 # ------------------------------------------------------------------------------
 
+<<<<<<< HEAD
 # REDIS_LOCATION = '{0}/{1}'.format(env('REDIS_URL', default='redis://127.0.0.1:6379'), 0)
 # # Heroku URL does not pass the DB number, so we parse it in
 # CACHES = {
@@ -145,6 +165,21 @@ DATABASES['default'] = env.db('DATABASE_URL')
 #         }
 #     }
 # }
+=======
+#REDIS_LOCATION = '{0}/{1}'.format(env('REDIS_URL', default='redis://127.0.0.1:6379'), 0)
+# Heroku URL does not pass the DB number, so we parse it in
+#CACHES = {
+#    'default': {
+#        'BACKEND': 'django_redis.cache.RedisCache',
+#        'LOCATION': REDIS_LOCATION,
+#        'OPTIONS': {
+#            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+#            'IGNORE_EXCEPTIONS': True,  # mimics memcache behavior.
+#                                        # http://niwinz.github.io/django-redis/latest/#_memcached_exceptions_behavior
+#        }
+#    }
+#}
+>>>>>>> c63acdf7eb4e9fdc3ea501f96f34698419ddc2ed
 
 
 # LOGGING CONFIGURATION
