@@ -116,7 +116,7 @@ INSTALLED_APPS += ('gunicorn', )
 # ------------------------
 #STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
 # EMAIL
 # ------------------------------------------------------------------------------
