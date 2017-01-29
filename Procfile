@@ -1,3 +1,1 @@
-release: python manage.py migrate
-web: gunicorn config.wsgi:application
-
+web: waitress-serve --port=$PORT config.wsgi:application
