@@ -58,7 +58,7 @@ X_FRAME_OPTIONS = 'DENY'
 ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['imtrequests.herokuapp.com'])
 # END SITE CONFIGURATION
 
-INSTALLED_APPS += ('gunicorn', )
+INSTALLED_APPS += ('gunicorn', 'waitress' )
 
 
 # STORAGE CONFIGURATION
