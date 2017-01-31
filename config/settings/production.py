@@ -16,7 +16,7 @@ from django.utils import six
 
 from .common import *  # noqa
 
-STATIC_ROOT = str(ROOT_DIR.path('staticfiles')
+STATIC_ROOT = str(ROOT_DIR.path('staticfiles'))
 
 # SECRET CONFIGURATION
 # ------------------------------------------------------------------------------
