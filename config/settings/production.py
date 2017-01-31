@@ -10,21 +10,13 @@ Production Configurations
 """
 from __future__ import absolute_import, unicode_literals
 
-from boto.s3.connection import OrdinaryCallingFormat
+#from boto.s3.connection import OrdinaryCallingFormat
 from django.utils import six
-import os
+#import os
 
 from .common import *  # noqa
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = 'staticfiles'
-STATIC_URL = '/static/'
-
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
-
-
+STATIC_ROOT = str(ROOT_DIR.path('staticfiles')
 
 # SECRET CONFIGURATION
 # ------------------------------------------------------------------------------
@@ -38,7 +30,7 @@ SECRET_KEY = env('DJANGO_SECRET_KEY')
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Use Whitenoise to serve static files
 # See: https://whitenoise.readthedocs.io/
-WHITENOISE_MIDDLEWARE = ('whitenoise.middleware.WhiteNoiseMiddleware', )
+WHITENOISE_MIDDLEWARE = ('django.middleware.security.SecurityMiddleware','whitenoise.middleware.WhiteNoiseMiddleware', )
 MIDDLEWARE = WHITENOISE_MIDDLEWARE + MIDDLEWARE
 
 
