@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+</br>
+<div class="card">
+    <div class="card-block">
+        <h3 class="card-title clearfix">
+            <span style="float:left">Item Name: {{object.item_name}}</span>
+            <span class="badge badge-default" style="float:right">{{ object.get_state_display|title }}</span>
+        </h3>
+        <h5 class="card-subtitle text-muted clearfix">
+            <span style="float:left">Request Number: {{object.pk}}</span>
+            <span style="float:right">Created on: {{ object.created }}</span>
+        </h5>
+        </br>
+            <table class="table table-hover table-bordered">
+                <thead class="thead-inverse"><tr><th>Field</th><th>Value</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Item Name</td><td>{{ object.item_name }}</td></tr>
+                    <tr><td>Description</td><td>{{ object.description }}</td></tr>
+                    <tr><td>Manufacturer</td><td>{{ object.manufacturer_name }} : {{ object.manufacturer_number }}</td></tr>
+                    <tr><td>Vendor</td><td>{{ object.vendor_name }} : {{ object.vendor_number }}</td></tr>
+                    <tr><td>Unit of Measure</td><td>{{ object.unit }}</td>
+                    <tr><td>Requester</td><td>{{ object.requester }}</td>
+                </tbody>
+            </table>
+            <p class="text-muted float-right">Request Created by User: {{object.created_by}}</p>
+    </div>
+</div>
+
+
+{% endblock %}

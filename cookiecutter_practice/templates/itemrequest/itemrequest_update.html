@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h3>Update Item Request</h3>
+</br>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+            {% crispy form %}
+    </div>
+    <div class="col-md-2"></div>
+</div>
+{% endblock %}

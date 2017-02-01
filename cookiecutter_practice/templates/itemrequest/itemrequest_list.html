@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row mb-md-3">
+    <div class="col-md-9">
+        <h2>Saved Requests</h2>
+    </div>
+    <div class="col-md-3"><a class="btn btn-primary btn-block" href={% url "request-new" %}>Create New Request</a></div>
+</div>
+<div class="row">
+    {% if saved_requests %}
+    <table class="table table-hover">
+        <thead class="thead-inverse">
+            <tr>
+            <th>Item Name</th>
+            <th>Requester's Name</th>
+            <th>Submitted On</th>
+            <th>State</th>
+            <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for request in saved_requests%}
+            <tr>
+                <td>{{ request.item_name }}</td>
+                <td>{{ request.requester }}</td>
+                <td>{{ request.created }}</td>
+                <td>{{ request.get_state_display|title }}</td> <!-- special method get_<field>_display to display the test rather than the numeric value-->
+                <td>
+                <a class="btn btn-outline-primary" href={% url "request-detail" request.pk %}>View</a>
+                <a class="btn btn-outline-primary" href={% url "request-update" request.pk %}>Edit</a>
+                <a class="btn btn-danger" href={% url "request-delete" request.pk %}>Delete</a>
+                </td>
+            </tr> 
+        {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <div class="col alert alert-info" role="alert">
+    <strong>No Saved Requests!</strong>
+    </div>
+    {% endif %}
+</div>
+<div class="row mb-md-3">
+<div class="col-md-9"><h2>Pending Requests</h2></div>
+<div class="col-md-3"></div>
+</div>
+{% if submitted_requests %}
+<div class="row">
+    <table class="table table-hover">
+        <thead class="thead-inverse">
+            <tr>
+            <th>Item Name</th>
+            <th>Requester's Name</th>
+            <th>Submitted On</th>
+            <th>State</th>
+            <th></th>
+            </tr>         
+        </thead>
+        <tbody>
+        {% for request in submitted_requests%}
+            <tr>
+                <td>{{ request.item_name }}</td>
+                <td>{{ request.requester }}</td>
+                <td>{{ request.created }}</td>
+                <td>{{ request.get_state_display|title }}</td> <!-- special method get_<field>_display to display the test rather than the numeric value-->
+                <td>
+                <a class="btn btn-outline-primary" href={% url "request-detail" request.pk %}>View</a>
+                <a class="btn btn-outline-primary" href={% url "request-update" request.pk %}>Edit</a>
+                <a class="btn btn-danger" href={% url "request-delete" request.pk %}>Delete</a>
+                </td>
+            </tr> 
+        {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <div class="col alert alert-info" role="alert">
+    <strong>No Pending Requests!</strong>
+    </div>
+    {% endif %}
+</div>
+
+<div class="row mb-md-3">
+<div class="col-md-9"><h2>Approved Requests</h2></div>
+<div class="col-md-3"></div>
+</div>
+<div class="row">
+    {% if approved_requests %}
+    <table class="table table-hover">
+        <thead class="thead-inverse">
+            <tr>
+            <th>Item Name</th>
+            <th>Requester's Name</th>
+            <th>Submitted On</th>
+            <th>State</th>
+            <th></th>
+            </tr>         
+        </thead>
+        <tbody>
+        {% for request in approved_requests%}
+            <tr>
+                <td>{{ request.item_name }}</td>
+                <td>{{ request.requester }}</td>
+                <td>{{ request.created }}</td>
+                <td>{{ request.get_state_display|title }}</td> <!-- special method get_<field>_display to display the test rather than the numeric value-->
+                <td>
+                <a class="btn btn-outline-primary" href={% url "request-detail" request.pk %}>View</a>
+                <a class="btn btn-outline-primary" href={% url "request-update" request.pk %}>Edit</a>
+                <a class="btn btn-danger" href={% url "request-delete" request.pk %}>Delete</a>
+                </td>
+            </tr> 
+        {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <div class="col alert alert-info" role="alert">
+    <strong>No Approved Requests!</strong>
+    </div>
+    {% endif %}
+</div>
+
+{% endblock %}
