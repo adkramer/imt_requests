@@ -41,7 +41,7 @@ class RequestDetail(DetailView):
         return context
 
 class RequestFormView(UserFormKwargsMixin, FormView):
-    template_name = 'itemrequest\itemrequest_form.html' 
+    template_name = 'itemrequest/itemrequest_form.html' 
     form_class = ItemRequestForm
     success_url = '/'
 
@@ -62,7 +62,7 @@ class RequestFormView(UserFormKwargsMixin, FormView):
 
 class RequestUpdateView(UpdateView):
     model = ItemRequest
-    template_name = 'itemrequest\itemrequest_update.html'
+    template_name = 'itemrequest/itemrequest_update.html'
     form_class = ItemRequestUpdateForm
 
     # def get_success_url(self):

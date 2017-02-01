@@ -15,7 +15,6 @@ from django.utils import six
 #import os
 
 from .common import *  # noqa
-DEBUG = env.bool('DJANGO_DEBUG', default=True)
 
 STATIC_ROOT = str(ROOT_DIR.path('staticfiles'))
 
